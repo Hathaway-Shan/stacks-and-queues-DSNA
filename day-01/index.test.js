@@ -1,4 +1,4 @@
-const { reverseSentence, oddishEvenish, titleCase } = require('./index');
+const { reverseSentence, oddishEvenish, titleCase, at } = require('./index');
 
 describe('primitive code challenges', () => {
   describe('reverseSentence', () => {
@@ -14,6 +14,11 @@ describe('primitive code challenges', () => {
   describe('titleCase', () => {
     it('replaces the first letter of each word in a string with a capital letter', () => {
       expect(titleCase('a quick brown fox')).toBe('A Quick Brown Fox');
+    });
+  });
+  describe('at', () => {
+    it('takes an array and index and returns the item at that index works with negative numbers as well', () => {
+      expect(at([1, 2, 3, 4, 5], -2)).toBe(4);
     });
   });
 });
