@@ -1,4 +1,4 @@
-const { reverseSentence, oddishEvenish } = require('./index');
+const { reverseSentence, oddishEvenish, titleCase } = require('./index');
 
 describe('primitive code challenges', () => {
   describe('reverseSentence', () => {
@@ -9,6 +9,11 @@ describe('primitive code challenges', () => {
   describe('oddishEvenish', () => {
     it('sums the digits of a number and returns Oddish or Evenish', () => {
       expect(oddishEvenish(123)).toBe('Evenish');
+    });
+  });
+  describe('titleCase', () => {
+    it('replaces the first letter of each word in a string with a capital letter', () => {
+      expect(titleCase('a quick brown fox')).toBe('A Quick Brown Fox');
     });
   });
 });

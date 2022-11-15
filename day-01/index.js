@@ -4,7 +4,7 @@ function reverseSentence(str) {
     .map((word) => word.split('').reverse().join(''))
     .join(' ');
 }
-module.exports = { reverseSentence, oddishEvenish };
+module.exports = { reverseSentence, oddishEvenish, titleCase };
 
 function oddishEvenish(num) {
   let digits = num.toString().split('');
@@ -21,4 +21,10 @@ function oddishEvenish(num) {
   }
 }
 
-console.log(oddishEvenish(123));
+function titleCase(str) {
+  const newStr = str
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+
+  return newStr.join(' ');
+}
