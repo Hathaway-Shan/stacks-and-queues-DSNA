@@ -4,7 +4,13 @@ function reverseSentence(str) {
     .map((word) => word.split('').reverse().join(''))
     .join(' ');
 }
-module.exports = { reverseSentence, oddishEvenish, titleCase, at };
+module.exports = {
+  reverseSentence,
+  oddishEvenish,
+  titleCase,
+  at,
+  multiplesOfN,
+};
 
 function oddishEvenish(num) {
   const digits = num.toString().split('');
@@ -45,4 +51,16 @@ function at(array, index) {
       break;
   }
   return result;
+}
+
+function multiplesOfN(n) {
+  const multiplesArr = [];
+
+  for (let i = 1; i <= 50; i++) {
+    if (i % n === 0) {
+      multiplesArr.push(i);
+    }
+  }
+
+  return multiplesArr;
 }
