@@ -7,6 +7,7 @@ const {
   isAnagram,
   pivotIndex,
   largestEvenNumber,
+  addPunctuation,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -48,6 +49,12 @@ describe('primitive code challenges', () => {
   describe('largestEvenNumber', () => {
     it('returns the largest even number in an array with recursion if no even numbers exist returns -1', () => {
       expect(largestEvenNumber([1, 2, 3, 4, 5, 6])).toBe(6);
+    });
+  });
+  describe('addPunctuation', () => {
+    it('takes a string and adds a string of punctuation to the end of it', () => {
+      const addExclamation = addPunctuation('!');
+      expect(addExclamation('Hello World')).toBe('Hello World!');
     });
   });
 });

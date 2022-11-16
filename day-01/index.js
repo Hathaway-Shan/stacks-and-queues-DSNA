@@ -13,6 +13,7 @@ module.exports = {
   isAnagram,
   pivotIndex,
   largestEvenNumber,
+  addPunctuation,
 };
 
 function oddishEvenish(num) {
@@ -131,4 +132,8 @@ function largestEvenNumber(nums) {
   //with one less number in the array call the function for recursion
 
   return largestEvenNumber(evenArr);
+}
+
+function addPunctuation(punctuation) {
+  return (string) => (string += punctuation);
 }
