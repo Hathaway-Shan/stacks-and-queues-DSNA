@@ -4,17 +4,6 @@ function reverseSentence(str) {
     .map((word) => word.split('').reverse().join(''))
     .join(' ');
 }
-module.exports = {
-  reverseSentence,
-  oddishEvenish,
-  titleCase,
-  at,
-  multiplesOfN,
-  isAnagram,
-  pivotIndex,
-  largestEvenNumber,
-  addPunctuation,
-};
 
 function oddishEvenish(num) {
   const digits = num.toString().split('');
@@ -137,3 +126,15 @@ function largestEvenNumber(nums) {
 function addPunctuation(punctuation) {
   return (string) => (string += punctuation);
 }
+
+module.exports = {
+  reverseSentence,
+  oddishEvenish,
+  titleCase,
+  at,
+  multiplesOfN,
+  isAnagram,
+  pivotIndex,
+  largestEvenNumber,
+  addPunctuation,
+};
