@@ -6,6 +6,7 @@ const {
   multiplesOfN,
   isAnagram,
   pivotIndex,
+  largestEvenNumber,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -42,6 +43,11 @@ describe('primitive code challenges', () => {
   describe('pivotIndex', () => {
     it('finds the lowest index in an array where the sum of numbers on the left and right side of that index are equal if no such index exists return -1', () => {
       expect(pivotIndex([1, 3, 7, 6, 9, 2])).toBe(3);
+    });
+  });
+  describe('largestEvenNumber', () => {
+    it('returns the largest even number in an array with recursion if no even numbers exist returns -1', () => {
+      expect(largestEvenNumber([1, 2, 3, 4, 5, 6])).toBe(6);
     });
   });
 });

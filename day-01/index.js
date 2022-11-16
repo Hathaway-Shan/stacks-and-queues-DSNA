@@ -12,6 +12,7 @@ module.exports = {
   multiplesOfN,
   isAnagram,
   pivotIndex,
+  largestEvenNumber,
 };
 
 function oddishEvenish(num) {
@@ -96,4 +97,38 @@ function pivotIndex(array) {
     leftSum += array[i];
   }
   return -1;
+}
+
+function largestEvenNumber(nums) {
+  const evenArr = [];
+  //copy the given array
+  const digits = nums.slice();
+
+  //if we are at the last number return it for index length 1
+  if (digits.length == 1) {
+    return digits[0];
+  }
+
+  //check if numbers are even and push even numbers to new array
+  digits.forEach((number) => {
+    if (number % 2 === 0) {
+      evenArr.push(number);
+    }
+  });
+
+  //add guard for if no even numbers exist in array
+  if (evenArr.length === 0) {
+    return -1;
+  }
+
+  //if we have even numbers check first two numbers in array and remove the lesser
+  if (evenArr[0] < evenArr[1]) {
+    //splice takes a start index and a delete count
+    evenArr.splice(0, 1);
+  } else {
+    evenArr.splice(1, 1);
+  }
+  //with one less number in the array call the function for recursion
+
+  return largestEvenNumber(evenArr);
 }
