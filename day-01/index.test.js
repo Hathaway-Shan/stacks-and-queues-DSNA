@@ -4,6 +4,7 @@ const {
   titleCase,
   at,
   multiplesOfN,
+  isAnagram,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -30,6 +31,11 @@ describe('primitive code challenges', () => {
   describe('multiplesOfN', () => {
     it('takes a number and returns all numbers from 1-50 that are multiples of that number', () => {
       expect(multiplesOfN(8)).toStrictEqual([8, 16, 24, 32, 40, 48]);
+    });
+  });
+  describe('isAnagram', () => {
+    it('takes two strings if the strings contain all the same letters returns true otherwise returns false', () => {
+      expect(isAnagram('dog', 'god')).toBe(true);
     });
   });
 });

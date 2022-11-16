@@ -10,6 +10,7 @@ module.exports = {
   titleCase,
   at,
   multiplesOfN,
+  isAnagram,
 };
 
 function oddishEvenish(num) {
@@ -63,4 +64,15 @@ function multiplesOfN(n) {
   }
 
   return multiplesArr;
+}
+
+function isAnagram(string1, string2) {
+  const arr1 = string1.toLowerCase().split('').sort().join('');
+  const arr2 = string2.toLowerCase().split('').sort().join('');
+
+  if (arr1 !== arr2) {
+    return false;
+  } else {
+    return true;
+  }
 }
