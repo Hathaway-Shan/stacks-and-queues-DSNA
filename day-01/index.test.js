@@ -5,6 +5,7 @@ const {
   at,
   multiplesOfN,
   isAnagram,
+  pivotIndex,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -36,6 +37,11 @@ describe('primitive code challenges', () => {
   describe('isAnagram', () => {
     it('takes two strings if the strings contain all the same letters returns true otherwise returns false', () => {
       expect(isAnagram('dog', 'god')).toBe(true);
+    });
+  });
+  describe('pivotIndex', () => {
+    it('finds the lowest index in an array where the sum of numbers on the left and right side of that index are equal if no such index exists return -1', () => {
+      expect(pivotIndex([1, 3, 7, 6, 9, 2])).toBe(3);
     });
   });
 });

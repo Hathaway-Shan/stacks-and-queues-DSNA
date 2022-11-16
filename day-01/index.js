@@ -11,6 +11,7 @@ module.exports = {
   at,
   multiplesOfN,
   isAnagram,
+  pivotIndex,
 };
 
 function oddishEvenish(num) {
@@ -75,4 +76,24 @@ function isAnagram(string1, string2) {
   } else {
     return true;
   }
+}
+
+function pivotIndex(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+
+  let totalSum = 0;
+  totalSum = array.reduce(
+    (previousValue, currentValue) => previousValue + currentValue
+  );
+
+  let leftSum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (totalSum - leftSum - array[i] === leftSum) {
+      return i;
+    }
+    leftSum += array[i];
+  }
+  return -1;
 }
