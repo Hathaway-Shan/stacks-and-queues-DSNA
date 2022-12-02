@@ -30,14 +30,56 @@ class BinaryTreeNode {
   }
 }
 
-const B = new BinaryTreeNode('B');
-const A = new BinaryTreeNode('A');
-const C = new BinaryTreeNode('C');
-const D = new BinaryTreeNode('D');
+// Keep in mind this is a recursive operation.
 
-// B will be the root of the tree:
-B.add(A);
-B.add(D);
-B.add(C);
+// console.log(JSON.stringify(B, null, 2)); //returns data as a JSON object with indentation
 
-// console.log(JSON.stringify(B, null, 2));
+class PersonTreeNode {
+  constructor(person) {
+    this.value = person.name;
+    this.person = person;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(node) {
+    // implemented as in previous challenge
+    if (node.value > this.value) {
+      if (this.right === null) {
+        this.right = node;
+      } else {
+        this.right.add(node);
+      }
+    } else {
+      if (this.left === null) {
+        this.left = node;
+      } else {
+        this.left.add(node);
+      }
+    }
+  }
+
+  findPerson(name) {
+    //if the name value of the node matches we are done
+
+    if (name === this.value) {
+      return this.person;
+    } else {
+      //we check if there is something to the left and if name is less than current value
+      if (this.left && name < this.value) {
+        //if that is true we call findPerson recursively and begin again then we mirror this on the right
+        return this.left.findPerson(name);
+      } else if (this.right && name > this.value) {
+        return this.right.findPerson(name);
+      } else {
+        //if there is no match in the tree we return undefined
+        return undefined;
+      }
+    }
+  }
+}
+
+module.exports = {
+  BinaryTreeNode,
+  PersonTreeNode,
+};
